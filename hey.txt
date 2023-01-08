@@ -1,0 +1,9 @@
+TODO: 
+** All before classes starts (January 16)
+
+- Finish this in 7 days!!!
+- Customize distro
+- Finish the projects in this course (All)
+- Learn how to create and consume an API in JavaScript/TypeScript
+- Learn TypeScript
+- Learn a little bit about React for now

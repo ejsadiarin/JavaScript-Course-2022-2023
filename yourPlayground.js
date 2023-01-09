@@ -42,7 +42,7 @@ let letters = ['a', 'b', 'c', 'd', 'e'];
 console.log(letters);
 console.log(letters[0]);
 
-// Array methods
+// ======= Array methods ======= //
 
 /* **********************************
 1: push --> adds new value to the end of the array
@@ -76,3 +76,50 @@ console.log(letters.indexOf('e'));
 */
 console.log(letters.length);
 
+// ======= OBJECTS {} ======= //
+// objects --> enclosed by curly braces {}, are generic --> can hold different value types or data types (string, number, etc.)
+// key: value
+// key is also called as property
+const person = {
+    name: 'Ej', // '' or "" are both fine 
+    face: 'handsome',
+    shirt: 'green',
+    age: 18
+}
+// Access object property (key)
+// dot notation:
+console.log(person.name);
+console.log(person.face);
+console.log(person.shirt);
+console.log(person.age);
+
+// bracket notation:
+console.log(person['name']);
+console.log(person['age']);
+console.log(person['shirt']);
+console.log(person['face']);
+console.log(typeof(person.age));
+// add new property to person object
+person.hobbies = 'programming and workout';
+person['birth month'] = 'January';
+console.log(person);
+
+// ======= EXTRA: don't mind ======= //
+
+/* Instructions:
+* - Given the formula, iterate two arrays e and z using a loop
+* g(z) = 1 / (1 + e**-z)
+* g(z) should be in list form / object form {} that holds generic data types (just store results in another new array)
+*/
+const e = [1.718, 2.718, 3.718, 4.718, 5.718, 6.718, 7.718, 8.718, 9.718, 10.718];
+const z = [2, 4, 6 ,8 ,10, 12, 14, 16, 18, 20]
+const result = (e, z) => {
+    let resultsArr = [];
+    for (let i = 0; i < e.length; i++) {
+        let formula = 1 / (1 + Math.pow(e[i], -z[i]));
+        resultsArr.push(formula);
+    }
+    console.log(resultsArr);
+}
+
+result(e, z);

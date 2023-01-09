@@ -44,3 +44,4 @@ let result = (num1, num2) => {
   return perform;
 }
 console.log(result(1, 1));
+console.log("LESGOWW");

@@ -1,22 +1,22 @@
 console.log('EJ SADIARIN IN THE UNVERSE!!!');
-// const food = 200;
-// const pricePercent = 0.2;
-// const tip = food * pricePercent;
-// console.log(tip);
+const food = 200;
+const pricePercent = 0.2;
+const tip = food * pricePercent;
+console.log(tip);
 
-// let input = prompt();
-// const typeInput = typeof(input);
+let input = "sentence";
+const typeInput = typeof(input);
 
-// console.log(`input type is: ${typeInput}`);
+console.log(`input type is: ${typeInput}`);
 
-// let inputInt = Number(input);
-// console.log(typeof(inputInt));
-// console.log(inputInt);
+let inputInt = Number(input);
+console.log(typeof(inputInt));
+console.log(inputInt);
 
-// // Date
-// let now = new Date().toDateString();
-// console.log(`The type of date: ${typeof(now)}`);
-// console.log(now);
+// Date
+let now = new Date().toDateString();
+console.log(`The type of date: ${typeof(now)}`);
+console.log(now);
 function floorRandom() {
   let random = Math.random() * 3;
   let randomFloor = Math.floor(random);

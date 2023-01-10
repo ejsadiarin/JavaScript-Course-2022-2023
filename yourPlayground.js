@@ -233,8 +233,11 @@ const sumOfArray = (arr) => {
 }
 console.log(sumOfArray(arrayNum));
 
+
+
+
 /**
- * Max Function
+ * @function max(array)
  * 
  * @param {number} array - given array 
  * 
@@ -271,6 +274,9 @@ const anotherMax = (numbers) => {
 // console.log(`anotherMax function result: ${anotherMax(arrayNum)}`); --> use if want to use return result above
 console.log(anotherMax(arrayNum)); // outputs object in console
 
+
+
+
 /**
  * @function letterFrequency(phrase)
  * 
@@ -303,8 +309,12 @@ const letterFrequency = (phrase) => {
 }
 console.log(letterFrequency("Wow Ej Sadiarin you so good handsome everything code goooooood"));
 
+
+
+// REAL WORLD EXAMPLE: GOOGLE SEARCH ENGINE
+// --> detecting the frequency of searched words (popular)
 /**
- * @function wordFrequency()
+ * @function wordFrequency(phrase)
  * 
  * @param {string} phrase - a phrase or sentence
  * 

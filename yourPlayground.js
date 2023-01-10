@@ -123,3 +123,16 @@ const result = (e, z) => {
 }
 
 result(e, z);
+
+// ======= Create a function that uses ES6 arrow function with 2 arguments, object, and template literals =======
+const createPerson = (theName, shirt) => {
+    const personNew = {
+        name: theName,
+        shirt: shirt,
+        face: 'handsome'
+    }
+
+    return `${personNew.name} is the name and shirt is ${personNew.shirt}, and face is ${personNew.face}`;
+}
+
+console.log(createPerson('edwin', 'yellow'));

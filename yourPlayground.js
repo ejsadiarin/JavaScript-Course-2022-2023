@@ -230,7 +230,7 @@ const max = (array) => {
         if (currentNum < nextNum) {
             result = nextNum;
         }
-        if (currentNum > nextNum) {
+        if (currentNum > nextNum) {result
             result = currentNum;
         }
     }

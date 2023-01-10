@@ -31,11 +31,11 @@ console.log(floorRandom());
 
 // Documentation Best Practices:
 
-/* In this format (for functions)
-* @param: {number} num1 first number to add
-* @param: {number} num2 second number to add
-* @return {number} returns result sum of adding num1 and num2
-*/
+/** In this format (for functions)
+ * @param {number} num1 first number to add
+ * @param {number} num2 second number to add
+ * @return {number} returns result sum of adding num1 and num2
+ */
 
 // Array
 let letters = ['a', 'b', 'c', 'd', 'e'];
@@ -56,12 +56,12 @@ console.log(letters);
 */
 
 console.log(letters.slice(0, 3)); 
-/*
-* @param {indexStart} - index of the value in the array to start from
-* @param {indexEnd} - x (index of value you want to get) < indexEnd
-*
-* Basically: indexStart < x < indexEnd
-*/
+/** 
+ * @param {indexStart} - index of the value in the array to start from
+ * @param {indexEnd} - x (index of value you want to get) < indexEnd
+ *
+ * Basically: indexStart < x < indexEnd
+ */
 
 // Get d, e, f from letters array:
 console.log(letters.slice(3, 6));
@@ -106,11 +106,11 @@ console.log(person);
 
 // ======= EXTRA: don't mind ======= //
 
-/* Instructions:
-* - Given the formula, iterate two arrays e and z using a loop
-* g(z) = 1 / (1 + e**-z)
-* g(z) should be in list form / object form {} that holds generic data types (just store results in another new array)
-*/
+/** Instructions:
+ * - Given the formula, iterate two arrays e and z using a loop
+ * g(z) = 1 / (1 + e**-z)
+ * g(z) should be in list form / object form {} that holds generic data types (just store results in another new array)
+ */
 const e = [1.718, 2.718, 3.718, 4.718, 5.718, 6.718, 7.718, 8.718, 9.718, 10.718];
 const z = [2, 4, 6 ,8 ,10, 12, 14, 16, 18, 20]
 const result = (e, z) => {
@@ -124,15 +124,34 @@ const result = (e, z) => {
 
 result(e, z);
 
-// ======= Create a function that uses ES6 arrow function with 2 arguments, object, and template literals =======
+// ======= Create a function that uses ES6 arrow function with 2 arguments, object, and template literals ======= //
+// then store a function in the object, use 'this' keyword
+/** createPerson function expression
+ * @param {theName} takes in name
+ * @param {shirt} takes in shirt
+ * @object property {networth} is a function that refers to assets subtracted by liabilities
+ * 'this' keyword refers to the personNew object that houses the properties
+ * @returns a template literal by personNew.{property key}
+ * when calling or returning a function in an object add parenthesis () for ex. personNew.networth() 
+ */
 const createPerson = (theName, shirt) => {
     const personNew = {
         name: theName,
         shirt: shirt,
-        face: 'handsome'
+        face: 'handsome',
+        assets: 1000000000,
+        liabilities: 700000,
+        networth: function () {
+            return this.assets - this.liabilities;
+        }
     }
 
-    return `${personNew.name} is the name and shirt is ${personNew.shirt}, and face is ${personNew.face}`;
+    return `${personNew.name} is the name and shirt is ${personNew.shirt}, and face is ${personNew.face}. The networth is ${personNew.networth()}`;
 }
 
-console.log(createPerson('edwin', 'yellow'));
+console.log(createPerson('Ej', 'green'));  
+
+// ======= LOOPS using 'of' and 'in' keyword ======= //
+/**
+ * @param {}
+ */

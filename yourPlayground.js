@@ -151,7 +151,89 @@ const createPerson = (theName, shirt) => {
 
 console.log(createPerson('Ej', 'green'));  
 
+// ======= LOOPS for loop =======
+
+const fruits = ['mango', 'banana', 'strawberry', 'kiwi', 'melon'];
+
+// beautiful normal loop using i iteration 
+for (let i = 0; i < fruits.length; i++) {
+    console.log(fruits[i]);
+}
+// beautiful shorter form of a for loop using 'of' keyword
+for (const fruit of fruits) {
+    console.log(`\nThe fruits are: ${fruit}`);
+}
+
+// use 'in' keyword for loops and use .length property for total amount of characters
+const countLetters = () => {
+    let phrase = 'hey how are you yes good yes yes ok wow';
+    return phrase.length;
+}
+console.log(`The total letters are: ${countLetters()}`);
+
 // ======= LOOPS using 'of' and 'in' keyword ======= //
 /**
- * @param {}
+ * of --> when looped, returns string or characters
+ * in --> when looped, returns numbers instead
+ * both can be used when populating a new array 
  */
+const countLettersWithInKeyword = () => {
+    let phrase = 'hey hey hey hye yesyesyeysys ok wow';
+
+    for (letter in phrase) {
+        console.log(letter);
+    }
+}
+countLettersWithInKeyword(); // prints 0 1 2 3 4 5 6 7 ...
+
+const countLettersWithOfKeyword = () => {
+    let phrase = 'hey hey hey hye yesyesyeysys ok wow';
+
+    for (letter of phrase) {
+        console.log(letter);
+    }
+}
+countLettersWithOfKeyword(); // prints h e y  h e y  h e y  h y e  y e s y e s y ...
+
+const phraseResult = 'hey hey ywo hey hey hey good wow ok wow';
+let counter = 0;
+
+for (const index in phraseResult) {
+    console.log(parseInt(index)+ 1);
+    counter = index
+}
+console.log({ counter }); // returns result as an object { counter: '38' }
+
+// ======= Sum of the numbers in an array ======= //
+const arrayNum = [1, 2, 3, 4, 5, 8, 12, 11, 7, 77, 70, 777];
+
+/** sumOfArray function --> product goooooood
+ * @param {arr} is an array 
+ * @returns the mutated result variable by adding the current result value + values in the array 
+ */
+const sumOfArray = (arr) => {
+    let result = 0;
+    for (const num of arr) {
+        console.log(num);
+        result = result + num; 
+    }
+    return { result }; // returns object
+    // can also do return result --> to return as a number
+}
+console.log(sumOfArray(arrayNum));
+
+const max = (array) => {
+    let result = 0;
+    for (let i = 0; i < array.length; i++) {
+        let currentNum = array[i];
+        let nextNum = array[i + 1];
+        if (currentNum < nextNum) {
+            result = nextNum;
+        }
+        if (currentNum > nextNum) {
+            result = currentNum;
+        }
+    }
+    return `The max number in the array is: ${result}`;
+}
+console.log(max(arrayNum));

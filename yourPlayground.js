@@ -31,10 +31,13 @@ console.log(floorRandom());
 
 // Documentation Best Practices:
 
-/** In this format (for functions)
- * @param {number} num1 first number to add
- * @param {number} num2 second number to add
- * @return {number} returns result sum of adding num1 and num2
+/** 
+ * In this format (for functions)
+ * 
+ * @param {number} num1 - first number to add
+ * @param {number} num2 - second number to add
+ * 
+ * @return {number} - returns result sum of adding num1 and num2
  */
 
 // Array
@@ -126,12 +129,17 @@ result(e, z);
 
 // ======= Create a function that uses ES6 arrow function with 2 arguments, object, and template literals ======= //
 // then store a function in the object, use 'this' keyword
-/** createPerson function expression
- * @param {theName} takes in name
- * @param {shirt} takes in shirt
+
+/** 
+ * createPerson function expression
+ * 
+ * @param {string} theName - takes in name
+ * @param {string} shirt - takes in shirt
+ * 
  * @object property {networth} is a function that refers to assets subtracted by liabilities
  * 'this' keyword refers to the personNew object that houses the properties
- * @returns a template literal by personNew.{property key}
+ * 
+ * @returns {string} a template literal by personNew.{property key}
  * when calling or returning a function in an object add parenthesis () for ex. personNew.networth() 
  */
 const createPerson = (theName, shirt) => {
@@ -207,9 +215,12 @@ console.log({ counter }); // returns result as an object { counter: '38' }
 // ======= Sum of the numbers in an array ======= //
 const arrayNum = [1, 2, 3, 4, 5, 8, 12, 11, 7, 77, 70, 777];
 
-/** sumOfArray function --> product goooooood
- * @param {arr} is an array 
- * @returns the mutated result variable by adding the current result value + values in the array 
+/** 
+ * sumOfArray function --> product goooooood
+ * 
+ * @param {number} arr - given array
+ * 
+ * @returns {number} - the sum of array by mutating the result variable - adding the current result value + values in the array 
  */
 const sumOfArray = (arr) => {
     let result = 0;
@@ -222,6 +233,13 @@ const sumOfArray = (arr) => {
 }
 console.log(sumOfArray(arrayNum));
 
+/**
+ * Max Function
+ * 
+ * @param {number} array - given array 
+ * 
+ * @returns {number} - the max number in an array
+ */
 const max = (array) => {
     let result = 0;
     for (let i = 0; i < array.length; i++) {
@@ -230,10 +248,85 @@ const max = (array) => {
         if (currentNum < nextNum) {
             result = nextNum;
         }
-        if (currentNum > nextNum) {result
+        if (currentNum > nextNum) {
             result = currentNum;
         }
     }
     return `The max number in the array is: ${result}`;
 }
 console.log(max(arrayNum));
+
+// another way of doing the max function
+const anotherMax = (numbers) => {
+    let result = numbers[0];
+    for (const number of numbers) {
+        if (number > result) {
+            result = number;
+        }
+    }
+
+    // return result; --> can be used if want to return pure number 
+    return { result };
+}
+// console.log(`anotherMax function result: ${anotherMax(arrayNum)}`); --> use if want to use return result above
+console.log(anotherMax(arrayNum)); // outputs object in console
+
+/**
+ * @function letterFrequency(phrase)
+ * 
+ * @param {string} phrase - any phrase or even sentence 
+ * 
+ * @returns {object} - counts how many certain specific letters are in a phrase string
+ * 
+ * @example {
+ * h: 1, 
+ * o: 14,
+ * e: 7,
+ * t: 2,
+ * w: 3
+ * }
+ */
+const letterFrequency = (phrase) => {
+    let frequency = {};
+    for (const letter of phrase) {
+        // check if letter exists
+        if (letter in frequency) {
+            // if yes then increment++
+            frequency[letter] += 1;
+        } else {
+            // otherwise set value to 1
+            frequency[letter] = 1;
+        }
+    }
+
+    return frequency;
+}
+console.log(letterFrequency("Wow Ej Sadiarin you so good handsome everything code goooooood"));
+
+/**
+ * @function wordFrequency()
+ * 
+ * @param {string} phrase - a phrase or sentence
+ * 
+ * @method split() - seperates words, letters, etc. given an argument
+ * @argument characters - in split() method
+ * 
+ * @returns {object} - counts the certain specific words in a given phrase or sentence
+ */
+const examplePhrase = 'hey hey wow good yes';
+const wordFrequency = (phrase) => {
+    let frequency = {};
+    // use split() method to seperate words
+    const splitPhrase = phrase.split(' ');
+    for (const word of splitPhrase) {
+        // check if word exist
+        if (word in frequency) {
+            frequency[word] += 1;
+        } else {
+            // if new word then set value to 1
+            frequency[word] = 1;
+        }
+    }
+    return frequency;
+}
+console.log(wordFrequency(examplePhrase));

@@ -393,8 +393,9 @@ console.log(filter([1, 2, 3, 7, 4, 5], 3));
 
 // REDUCE
 /**
+ * reduces array to a single value
  * used in SUM
- * @returns one number
+ * @returns one number / single value
  */  
 
 // 
@@ -419,12 +420,15 @@ const exampleObj = [
 let moneyp = exampleObj[1];
 console.log(moneyp);
 
-// given the array of objects above, get the sum of the money {number}
+// ======= given the array of objects above, get the sum of the money {number} ======= //
 const moneySum = (objectPerson) => {
-  let result = objectPerson.reduce(person => person.money, );
-  // for (const person of objectPerson) {
-  //   result = result + person.money;
-  // }
+  let result = 0;
+  for (const person of objectPerson) {
+    result = result + person.money;
+  }
   return result;
 }
 console.log(moneySum(exampleObj));
+
+// optimize above solution (use reduce())
+

@@ -399,7 +399,7 @@ console.log(filter([1, 2, 3, 7, 4, 5], 3));
  */  
 
 // 
-console.log(nums.reduce(num => num * 2)); 
+console.log(nums.reduce(num => num * 2, 9)); 
 // given an array called nums, use reduce() array method to return the product of the whole array
 console.log(nums.reduce((a, b) => a * b)); 
 
@@ -430,5 +430,13 @@ const moneySum = (objectPerson) => {
 }
 console.log(moneySum(exampleObj));
 
-// optimize above solution (use reduce())
+// TODO: optimize above solution (use reduce())
+const reducef = nums.reduce(num => num.reduce())
+const moneySumReduce = (arr) => {
+  let result = 0;
+  for (const num in arr) {
+    
+  }
+}
+
 

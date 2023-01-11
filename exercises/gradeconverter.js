@@ -6,6 +6,13 @@
  * F - 65 or lower
  * 
  */
-const gradeConverter = () => {
-
+const gradeConverter = (grade) => {
+    if (grade > 90) {
+        
+    }
+    if (89 <= grade && grade > 80) 
+    
+    else {
+        
+    }
 }

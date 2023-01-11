@@ -219,9 +219,6 @@ console.log({ counter }); // returns result as an object { counter: '38' }
 // ======= Sum of the numbers in an array ======= //
 const arrayNum = [1, 2, 3, 4, 5, 8, 12, 11, 7, 77, 70, 777];
 
-
-
-
 /**
  * sumOfArray function --> product goooooood
  *
@@ -314,11 +311,7 @@ const letterFrequency = (phrase) => {
 
   return frequency;
 };
-console.log(
-  letterFrequency(
-    "Wow Ej Sadiarin you so good handsome everything code goooooood"
-  )
-);
+console.log(letterFrequency("Wow Ej Sadiarin you so good handsome everything code goooooood"));
 
 
 
@@ -354,12 +347,39 @@ const wordFrequency = (phrase) => {
 console.log(wordFrequency(examplePhrase));
 
 
+/* ======= HIGHER ORDER FUNCTIONS ======= 
+ --> functions that takes in another function as argument and/or returns a function
+*/
 
-// ======= MAP, FILTER, REDUCE Array Methods ======= //
+//  MAP, FILTER, REDUCE Array Methods  
+const nums = [1, 2, 3, 4, 7, 9, 5, 8];
 
-// MAP
+/**
+ * MAP  @method map()
+ * - selects all values and 
+ * - changes the value of the whole given array
+ * - works like loops but returns new array
+ *   
+ * @param callbackfn
+ * 
+ * @returns {array} - new array 
+ */
+const mapFunc = (numArray) => {
+  return numArray.map(number => number * 2);
+}
+console.log(mapFunc(arrayNum));
 
-// FILTER
+
+// MAP simple ver
+console.log(nums.map(num => num * 2));
+
+
+
+// FILTER - filters out values from an array given a condition
+//        - works like loops but returns new array
+console.log(nums.filter(num => num > 5 || num === 5));
+
+// works the same as this:
 const filter = (numbers, greaterThan) => {
   let result = [];
   for (const number of numbers) {
@@ -372,3 +392,39 @@ const filter = (numbers, greaterThan) => {
 console.log(filter([1, 2, 3, 7, 4, 5], 3));
 
 // REDUCE
+/**
+ * used in SUM
+ * @returns one number
+ */  
+
+// 
+console.log(nums.reduce(num => num * 2)); 
+// given an array called nums, use reduce() array method to return the product of the whole array
+console.log(nums.reduce((a, b) => a * b)); 
+
+// return sum of array using sum() function
+const sum = (a, b) => {
+  return a + b;
+}
+const resultNumsArray = nums.reduce(sum);
+console.log(resultNumsArray);
+console.log(sumOfArray(nums));
+
+
+const exampleObj = [
+  {name: "personOne", money: 1000000},
+  {name: "personTwo", money: 7080328},
+  {name: "personThree", money: 891302777}
+]
+let moneyp = exampleObj[1];
+console.log(moneyp);
+
+// given the array of objects above, get the sum of the money {number}
+const moneySum = (objectPerson) => {
+  let result = objectPerson.reduce(person => person.money, );
+  // for (const person of objectPerson) {
+  //   result = result + person.money;
+  // }
+  return result;
+}
+console.log(moneySum(exampleObj));

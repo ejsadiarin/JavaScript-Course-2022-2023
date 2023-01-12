@@ -431,12 +431,22 @@ const moneySum = (objectPerson) => {
 console.log(moneySum(exampleObj));
 
 // TODO: optimize above solution (use reduce())
-const reducef = nums.reduce(num => num.reduce())
-const moneySumReduce = (arr) => {
-  let result = 0;
-  for (const num in arr) {
+// const reducef = nums.reduce(num => num.reduce())
+// const moneySumReduce = (arr) => {
+//   let result = 0;
+//   for (const num in arr) {
     
+//   }
+// }
+const func = () => {
+  let result = 0;
+  for (const num of nums) {
+    result = result + num;
   }
 }
 
+const functionA = (arr) => {
+  arr.reduce(fnp => fnp * 2);
+  return result
+}
 

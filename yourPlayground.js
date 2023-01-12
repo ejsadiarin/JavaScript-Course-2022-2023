@@ -438,15 +438,27 @@ console.log(moneySum(exampleObj));
     
 //   }
 // }
-const func = () => {
-  let result = 0;
-  for (const num of nums) {
-    result = result + num;
-  }
-}
+// const func = () => {
+//   let result = 0;
+//   for (const num of nums) {
+//     result = result + num;
+//   }
+// }
 
-const functionA = (arr) => {
-  arr.reduce(fnp => fnp * 2);
-  return result
-}
+// ======= API ======= //
+/**
+ * 
+ */
+const dogImage = document.getElementById('dogImage');
+const dogButton = document.getElementById('dogButton');
 
+// example: 'run 2nd' will run last since it is async
+console.log('run 1st')
+fetch('https://dog.ceo/api/breeds/image/random')
+  .then(response => response.json)
+  .then(json => {
+    console.log(json.message)
+    dogImage.innerHTML = `<img src='${json.message}'/>`
+  })
+
+  console.log('run 3rd');

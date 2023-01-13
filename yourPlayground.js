@@ -464,15 +464,16 @@ fetch('https://dog.ceo/api/breeds/image/random')
   console.log('run 3rd');
 
 // Get a random number and set minimum value to 1 and max to 734
-  const minMax = (number) => {
-    
-    // reroll
-    if (number > 735 && number < 1) {
+const minMax = (number) => {
+  let result = 0;
+  // reroll
+  if (number > 735 && number < 1) {
       minMax(number);
-    } else {
-      return;
-    }
-    
+  } else {
+      result = number;
+      return result;
   }
   
-console.log(minMax(Math.random()));
+}
+// @argument {number} 734 - defines the maximum value
+console.log(minMax(Math.floor(Math.random() * 735)));

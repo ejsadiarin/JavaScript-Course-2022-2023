@@ -12,4 +12,4 @@ const minMax = (number) => {
     
 }
 // @argument {number} 734 - defines the maximum value
-console.log(minMax(Math.floor(Math.random() * 734)));
+console.log(minMax(Math.floor(Math.random() * 735)));

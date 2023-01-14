@@ -490,9 +490,9 @@ const getHero = (id) => {
   .then(response => response.json())
   .then(json => {
     console.log(json);
-
   })
 }
+
 getHero(1);
 
 // Call getHero() with random number argument - create a function for the random number
@@ -500,6 +500,8 @@ const randomNumber = () => {
   const numberOfHeroes = 731;
   return Math.floor(Math.random() * numberOfHeroes) + 1;
 }
+
 console.log(randomNumber());
 
 
+getHero(randomNumber());

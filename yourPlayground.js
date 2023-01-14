@@ -354,129 +354,129 @@
 // //  MAP, FILTER, REDUCE Array Methods  
 // const nums = [1, 2, 3, 4, 7, 9, 5, 8];
 
-// /**
-//  * MAP  @method map()
-//  * - selects all values and 
-//  * - changes the value of the whole given array
-//  * - works like loops but returns new array
-//  *   
-//  * @param callbackfn
-//  * 
-//  * @returns {array} - new array 
-//  */
-// const mapFunc = (numArray) => {
-//   return numArray.map(number => number * 2);
-// }
-// console.log(mapFunc(arrayNum));
+/**
+ * MAP  @method map()
+ * - selects all values and 
+ * - changes the value of the whole given array
+ * - works like loops but returns new array
+ *   
+ * @param callbackfn
+ * 
+ * @returns {array} - new array 
+ */
+const mapFunc = (numArray) => {
+  return numArray.map(number => number * 2);
+}
+console.log(mapFunc(arrayNum));
 
 
-// // MAP simple ver
-// console.log(nums.map(num => num * 2));
+// MAP simple ver
+console.log(nums.map(num => num * 2));
 
 
 
-// // FILTER - filters out values from an array given a condition
-// //        - works like loops but returns new array
-// console.log(nums.filter(num => num > 5 || num === 5));
+// FILTER - filters out values from an array given a condition
+//        - works like loops but returns new array
+console.log(nums.filter(num => num > 5 || num === 5));
 
-// // works the same as this:
-// const filter = (numbers, greaterThan) => {
-//   let result = [];
-//   for (const number of numbers) {
-//     if (number > greaterThan) {
-//       result.push(number);
-//     }
-//   }
-//   return result;
-// };
-// console.log(filter([1, 2, 3, 7, 4, 5], 3));
+// works the same as this:
+const filter = (numbers, greaterThan) => {
+  let result = [];
+  for (const number of numbers) {
+    if (number > greaterThan) {
+      result.push(number);
+    }
+  }
+  return result;
+};
+console.log(filter([1, 2, 3, 7, 4, 5], 3));
 
-// // REDUCE
-// /**
-//  * reduces array to a single value
-//  * used in SUM
-//  * @returns one number / single value
-//  */  
+// REDUCE
+/**
+ * reduces array to a single value
+ * used in SUM
+ * @returns one number / single value
+ */  
 
-// // 
-// console.log(nums.reduce(num => num * 2, 9)); 
-// // given an array called nums, use reduce() array method to return the product of the whole array
-// console.log(nums.reduce((a, b) => a * b)); 
+// 
+console.log(nums.reduce(num => num * 2, 9)); 
+// given an array called nums, use reduce() array method to return the product of the whole array
+console.log(nums.reduce((a, b) => a * b)); 
 
-// // return sum of array using sum() function
-// const sum = (a, b) => {
-//   return a + b;
-// }
-// const resultNumsArray = nums.reduce(sum);
-// console.log(resultNumsArray);
-// console.log(sumOfArray(nums));
+// return sum of array using sum() function
+const sum = (a, b) => {
+  return a + b;
+}
+const resultNumsArray = nums.reduce(sum);
+console.log(resultNumsArray);
+console.log(sumOfArray(nums));
 
 
-// const exampleObj = [
-//   {name: "personOne", money: 1000000},
-//   {name: "personTwo", money: 7080328},
-//   {name: "personThree", money: 891302777}
-// ]
-// let moneyp = exampleObj[1];
-// console.log(moneyp);
+const exampleObj = [
+  {name: "personOne", money: 1000000},
+  {name: "personTwo", money: 7080328},
+  {name: "personThree", money: 891302777}
+]
+let moneyp = exampleObj[1];
+console.log(moneyp);
 
-// // ======= given the array of objects above, get the sum of the money {number} ======= //
-// const moneySum = (objectPerson) => {
-//   let result = 0;
-//   for (const person of objectPerson) {
-//     result = result + person.money;
-//   }
-//   return result;
-// }
-// console.log(moneySum(exampleObj));
+// ======= given the array of objects above, get the sum of the money {number} ======= //
+const moneySum = (objectPerson) => {
+  let result = 0;
+  for (const person of objectPerson) {
+    result = result + person.money;
+  }
+  return result;
+}
+console.log(moneySum(exampleObj));
 
-// // TODO: optimize above solution (use reduce())
-// // const reducef = nums.reduce(num => num.reduce())
-// // const moneySumReduce = (arr) => {
-// //   let result = 0;
-// //   for (const num in arr) {
+// TODO: optimize above solution (use reduce())
+const reducef = nums.reduce(num => num.reduce())
+const moneySumReduce = (arr) => {
+  let result = 0;
+  for (const num in arr) {
     
-// //   }
-// // }
-// // const func = () => {
-// //   let result = 0;
-// //   for (const num of nums) {
-// //     result = result + num;
-// //   }
-// // }
+  }
+}
+const func = () => {
+  let result = 0;
+  for (const num of nums) {
+    result = result + num;
+  }
+}
 
 // // ======= API ======= //
 // /**
 //  * 
 //  */
-// const dogImage = document.getElementById('dogImage');
-// const dogButton = document.getElementById('dogButton');
+const dogImage = document.getElementById('dogImage');
+const dogButton = document.getElementById('dogButton');
 
-// // example: 'run 2nd' will run last since it is async
-// console.log('run 1st')
-// fetch('https://dog.ceo/api/breeds/image/random')
-//   .then(response => response.json)
-//   .then(json => {
-//     console.log(json.message)
-//     dogImage.innerHTML = `<img src='${json.message}'/>`
-//   })
+// example: 'run 2nd' will run last since it is async
+console.log('run 1st')
+fetch('https://dog.ceo/api/breeds/image/random')
+  .then(response => response.json)
+  .then(json => {
+    console.log(json.message)
+    dogImage.innerHTML = `<img src='${json.message}'/>`
+  })
 
-//   console.log('run 3rd');
+  console.log('run 3rd');
 
-// // Get a random number and set minimum value to 1 and max to 734
-// const minMax = (number) => {
-//   let result = 0;
-//   // reroll
-//   if (number > 735 && number < 1) {
-//       minMax(number);
-//   } else {
-//       result = number;
-//       return result;
-//   }
+// Get a random number and set minimum value to 1 and max to 734
+const minMax = (number) => {
+  let result = 0;
+  // reroll
+  if (number > 735 && number < 1) {
+      minMax(number);
+  } else {
+      result = number;
+      return result;
+  }
   
-// }
-// // @argument {number} 734 - defines the maximum value
-// console.log(minMax(Math.floor(Math.random() * 735)));
+}
+// @argument {number} 734 - defines the maximum value
+console.log(minMax(Math.floor(Math.random() * 735)));
 
 // Superhero API
 // ACCESS TOKEN: 127759136856495

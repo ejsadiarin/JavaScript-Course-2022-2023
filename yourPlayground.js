@@ -1,358 +1,358 @@
-// console.log("EJ SADIARIN IN THE UNVERSE!!!");
-// const food = 200;
-// const pricePercent = 0.2;
-// const tip = food * pricePercent;
-// console.log(tip);
+console.log("EJ SADIARIN IN THE UNVERSE!!!");
+const food = 200;
+const pricePercent = 0.2;
+const tip = food * pricePercent;
+console.log(tip);
+// 
+let input = "sentence";
+const typeInput = typeof input;
+// 
+console.log(`input type is: ${typeInput}`);
+// 
+let inputInt = Number(input);
+console.log(typeof inputInt);
+console.log(inputInt);
+// 
+// Date
+let now = new Date().toDateString();
+console.log(`The type of date: ${typeof now}`);
+console.log(now);
+function floorRandom() {
+  let random = Math.random() * 3;
+  let randomFloor = Math.floor(random);
+  return randomFloor;
+  // or console.log(randomFloor);
+  // and just call floorRandom();
+}
+// floorRandom();
+console.log(floorRandom());
+// 
+// THE REST IS IN VSCODE //
+// 
+// Documentation Best Practices:
+// 
+/**
+ * In this format (for functions)
+ *
+ * @param {number} num1 - first number to add
+ * @param {number} num2 - second number to add
+ *
+ * @return {number} - returns result sum of adding num1 and num2
+ */
 
-// let input = "sentence";
-// const typeInput = typeof input;
+// Array
+let letters = ["a", "b", "c", "d", "e"];
+console.log(letters);
+console.log(letters[0]);
 
-// console.log(`input type is: ${typeInput}`);
+// ======= Array methods ======= //
 
-// let inputInt = Number(input);
-// console.log(typeof inputInt);
-// console.log(inputInt);
+/* **********************************
+1: push --> adds new value to the end of the array
+*/
 
-// // Date
-// let now = new Date().toDateString();
-// console.log(`The type of date: ${typeof now}`);
-// console.log(now);
-// function floorRandom() {
-//   let random = Math.random() * 3;
-//   let randomFloor = Math.floor(random);
-//   return randomFloor;
-//   // or console.log(randomFloor);
-//   // and just call floorRandom();
-// }
-// // floorRandom();
-// console.log(floorRandom());
+letters.push("f");
+console.log(letters);
 
-// // THE REST IS IN VSCODE //
+/* **********************************
+2: slice --> gets value from array
+*/
 
-// // Documentation Best Practices:
+console.log(letters.slice(0, 3));
+/**
+ * @param {indexStart} - index of the value in the array to start from
+ * @param {indexEnd} - x (index of value you want to get) < indexEnd
+ *
+ * Basically: indexStart < x < indexEnd
+ */
 
-// /**
-//  * In this format (for functions)
-//  *
-//  * @param {number} num1 - first number to add
-//  * @param {number} num2 - second number to add
-//  *
-//  * @return {number} - returns result sum of adding num1 and num2
-//  */
+// Get d, e, f from letters array:
+console.log(letters.slice(3, 6));
 
-// // Array
-// let letters = ["a", "b", "c", "d", "e"];
-// console.log(letters);
-// console.log(letters[0]);
+/* **********************************
+3: indexOf --> gets index of the value selected from the specific array
+*/
+console.log(letters.indexOf("e"));
 
-// // ======= Array methods ======= //
+/* **********************************
+4: length --> gets the total index length of an array
+*/
+console.log(letters.length);
 
-// /* **********************************
-// 1: push --> adds new value to the end of the array
-// */
+// ======= OBJECTS {} ======= //
+// objects --> enclosed by curly braces {}, are generic --> can hold different value types or data types (string, number, etc.)
+// key: value
+// key is also called as property
+const person = {
+  name: "Ej", // '' or "" are both fine
+  face: "handsome",
+  shirt: "green",
+  age: 18,
+};
+// Access object property (key)
+// dot notation:
+console.log(person.name);
+console.log(person.face);
+console.log(person.shirt);
+console.log(person.age);
 
-// letters.push("f");
-// console.log(letters);
+// bracket notation:
+console.log(person["name"]);
+console.log(person["age"]);
+console.log(person["shirt"]);
+console.log(person["face"]);
+console.log(typeof person.age);
+// add new property to person object
+person.hobbies = "programming and workout";
+person["birth month"] = "January";
+console.log(person);
 
-// /* **********************************
-// 2: slice --> gets value from array
-// */
+// ======= EXTRA: don't mind ======= //
 
-// console.log(letters.slice(0, 3));
-// /**
-//  * @param {indexStart} - index of the value in the array to start from
-//  * @param {indexEnd} - x (index of value you want to get) < indexEnd
-//  *
-//  * Basically: indexStart < x < indexEnd
-//  */
+/** Instructions:
+ * - Given the formula, iterate two arrays e and z using a loop
+ * g(z) = 1 / (1 + e**-z)
+ * g(z) should be in list form / object form {} that holds generic data types (just store results in another new array)
+ */
+const e = [
+  1.718, 2.718, 3.718, 4.718, 5.718, 6.718, 7.718, 8.718, 9.718, 10.718,
+];
+const z = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20];
+const result = (e, z) => {
+  let resultsArr = [];
+  for (let i = 0; i < e.length; i++) {
+    let formula = 1 / (1 + Math.pow(e[i], -z[i]));
+    resultsArr.push(formula);
+  }
+  console.log(resultsArr);
+};
 
-// // Get d, e, f from letters array:
-// console.log(letters.slice(3, 6));
+result(e, z);
 
-// /* **********************************
-// 3: indexOf --> gets index of the value selected from the specific array
-// */
-// console.log(letters.indexOf("e"));
+// ======= Create a function that uses ES6 arrow function with 2 arguments, object, and template literals ======= //
+// then store a function in the object, use 'this' keyword
 
-// /* **********************************
-// 4: length --> gets the total index length of an array
-// */
-// console.log(letters.length);
+/**
+ * createPerson function expression
+ *
+ * @param {string} theName - takes in name
+ * @param {string} shirt - takes in shirt
+ *
+ * @object property {networth} is a function that refers to assets subtracted by liabilities
+ * 'this' keyword refers to the personNew object that houses the properties
+ *
+ * @returns {string} a template literal by personNew.{property key}
+ * when calling or returning a function in an object add parenthesis () for ex. personNew.networth()
+ */
+const createPerson = (theName, shirt) => {
+  const personNew = {
+    name: theName,
+    shirt: shirt,
+    face: "handsome",
+    assets: 1000000000,
+    liabilities: 700000,
+    networth: function () {
+      return this.assets - this.liabilities;
+    },
+  };
 
-// // ======= OBJECTS {} ======= //
-// // objects --> enclosed by curly braces {}, are generic --> can hold different value types or data types (string, number, etc.)
-// // key: value
-// // key is also called as property
-// const person = {
-//   name: "Ej", // '' or "" are both fine
-//   face: "handsome",
-//   shirt: "green",
-//   age: 18,
-// };
-// // Access object property (key)
-// // dot notation:
-// console.log(person.name);
-// console.log(person.face);
-// console.log(person.shirt);
-// console.log(person.age);
+  return `${personNew.name} is the name and shirt is ${
+    personNew.shirt
+  }, and face is ${personNew.face}. The networth is ${personNew.networth()}`;
+};
 
-// // bracket notation:
-// console.log(person["name"]);
-// console.log(person["age"]);
-// console.log(person["shirt"]);
-// console.log(person["face"]);
-// console.log(typeof person.age);
-// // add new property to person object
-// person.hobbies = "programming and workout";
-// person["birth month"] = "January";
-// console.log(person);
+console.log(createPerson("Ej", "green"));
 
-// // ======= EXTRA: don't mind ======= //
+// ======= LOOPS for loop =======
 
-// /** Instructions:
-//  * - Given the formula, iterate two arrays e and z using a loop
-//  * g(z) = 1 / (1 + e**-z)
-//  * g(z) should be in list form / object form {} that holds generic data types (just store results in another new array)
-//  */
-// const e = [
-//   1.718, 2.718, 3.718, 4.718, 5.718, 6.718, 7.718, 8.718, 9.718, 10.718,
-// ];
-// const z = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20];
-// const result = (e, z) => {
-//   let resultsArr = [];
-//   for (let i = 0; i < e.length; i++) {
-//     let formula = 1 / (1 + Math.pow(e[i], -z[i]));
-//     resultsArr.push(formula);
-//   }
-//   console.log(resultsArr);
-// };
+const fruits = ["mango", "banana", "strawberry", "kiwi", "melon"];
 
-// result(e, z);
+// beautiful normal loop using i iteration
+for (let i = 0; i < fruits.length; i++) {
+  console.log(fruits[i]);
+}
+// beautiful shorter form of a for loop using 'of' keyword
+for (const fruit of fruits) {
+  console.log(`\nThe fruits are: ${fruit}`);
+}
 
-// // ======= Create a function that uses ES6 arrow function with 2 arguments, object, and template literals ======= //
-// // then store a function in the object, use 'this' keyword
+// use 'in' keyword for loops and use .length property for total amount of characters
+const countLetters = () => {
+  let phrase = "hey how are you yes good yes yes ok wow";
+  return phrase.length;
+};
+console.log(`The total letters are: ${countLetters()}`);
 
-// /**
-//  * createPerson function expression
-//  *
-//  * @param {string} theName - takes in name
-//  * @param {string} shirt - takes in shirt
-//  *
-//  * @object property {networth} is a function that refers to assets subtracted by liabilities
-//  * 'this' keyword refers to the personNew object that houses the properties
-//  *
-//  * @returns {string} a template literal by personNew.{property key}
-//  * when calling or returning a function in an object add parenthesis () for ex. personNew.networth()
-//  */
-// const createPerson = (theName, shirt) => {
-//   const personNew = {
-//     name: theName,
-//     shirt: shirt,
-//     face: "handsome",
-//     assets: 1000000000,
-//     liabilities: 700000,
-//     networth: function () {
-//       return this.assets - this.liabilities;
-//     },
-//   };
+// ======= LOOPS using 'of' and 'in' keyword ======= //
+/**
+ * of --> when looped, returns string or characters
+ * in --> when looped, returns numbers instead
+ * both can be used when populating a new array
+ */
+const countLettersWithInKeyword = () => {
+  let phrase = "hey hey hey hye yesyesyeysys ok wow";
 
-//   return `${personNew.name} is the name and shirt is ${
-//     personNew.shirt
-//   }, and face is ${personNew.face}. The networth is ${personNew.networth()}`;
-// };
+  for (letter in phrase) {
+    console.log(letter);
+  }
+};
+countLettersWithInKeyword(); // prints 0 1 2 3 4 5 6 7 ...
 
-// console.log(createPerson("Ej", "green"));
+const countLettersWithOfKeyword = () => {
+  let phrase = "hey hey hey hye yesyesyeysys ok wow";
 
-// // ======= LOOPS for loop =======
+  for (letter of phrase) {
+    console.log(letter);
+  }
+};
+countLettersWithOfKeyword(); // prints h e y  h e y  h e y  h y e  y e s y e s y ...
 
-// const fruits = ["mango", "banana", "strawberry", "kiwi", "melon"];
+const phraseResult = "hey hey ywo hey hey hey good wow ok wow";
+let counter = 0;
 
-// // beautiful normal loop using i iteration
-// for (let i = 0; i < fruits.length; i++) {
-//   console.log(fruits[i]);
-// }
-// // beautiful shorter form of a for loop using 'of' keyword
-// for (const fruit of fruits) {
-//   console.log(`\nThe fruits are: ${fruit}`);
-// }
+for (const index in phraseResult) {
+  console.log(parseInt(index) + 1);
+  counter = index;
+}
+console.log({ counter }); // returns result as an object { counter: '38' }
 
-// // use 'in' keyword for loops and use .length property for total amount of characters
-// const countLetters = () => {
-//   let phrase = "hey how are you yes good yes yes ok wow";
-//   return phrase.length;
-// };
-// console.log(`The total letters are: ${countLetters()}`);
+// ======= Sum of the numbers in an array ======= //
+const arrayNum = [1, 2, 3, 4, 5, 8, 12, 11, 7, 77, 70, 777];
 
-// // ======= LOOPS using 'of' and 'in' keyword ======= //
-// /**
-//  * of --> when looped, returns string or characters
-//  * in --> when looped, returns numbers instead
-//  * both can be used when populating a new array
-//  */
-// const countLettersWithInKeyword = () => {
-//   let phrase = "hey hey hey hye yesyesyeysys ok wow";
-
-//   for (letter in phrase) {
-//     console.log(letter);
-//   }
-// };
-// countLettersWithInKeyword(); // prints 0 1 2 3 4 5 6 7 ...
-
-// const countLettersWithOfKeyword = () => {
-//   let phrase = "hey hey hey hye yesyesyeysys ok wow";
-
-//   for (letter of phrase) {
-//     console.log(letter);
-//   }
-// };
-// countLettersWithOfKeyword(); // prints h e y  h e y  h e y  h y e  y e s y e s y ...
-
-// const phraseResult = "hey hey ywo hey hey hey good wow ok wow";
-// let counter = 0;
-
-// for (const index in phraseResult) {
-//   console.log(parseInt(index) + 1);
-//   counter = index;
-// }
-// console.log({ counter }); // returns result as an object { counter: '38' }
-
-// // ======= Sum of the numbers in an array ======= //
-// const arrayNum = [1, 2, 3, 4, 5, 8, 12, 11, 7, 77, 70, 777];
-
-// /**
-//  * sumOfArray function --> product goooooood
-//  *
-//  * @param {number} arr - given array
-//  *
-//  * @returns {number} - the sum of array by mutating the result variable - adding the current result value + values in the array
-//  */
-// const sumOfArray = (arr) => {
-//   let result = 0;
-//   for (const num of arr) {
-//     console.log(num);
-//     result = result + num;
-//   }
-//   return { result }; // returns object
-//   // can also do return result --> to return as a number
-// };
-// console.log(sumOfArray(arrayNum));
-
-
-
-// // ======= Max Function ======= //
-// /**
-//  * @function max(array)
-//  *
-//  * @param {number} array - given array
-//  *
-//  * @returns {number} - the max number in an array
-//  */
-// const max = (array) => {
-//   let result = 0;
-//   for (let i = 0; i < array.length; i++) {
-//     let currentNum = array[i];
-//     let nextNum = array[i + 1];
-//     if (currentNum < nextNum) {
-//       result = nextNum;
-//     }
-//     if (currentNum > nextNum) {
-//       result = currentNum;
-//     }
-//   }
-//   return `The max number in the array is: ${result}`;
-// };
-// console.log(max(arrayNum));
-
-// // another way of doing the max function
-// const anotherMax = (numbers) => {
-//   let result = numbers[0];
-//   for (const number of numbers) {
-//     if (number > result) {
-//       result = number;
-//     }
-//   }
-
-//   // return result; --> can be used if want to return pure number
-//   return { result };
-// };
-// // console.log(`anotherMax function result: ${anotherMax(arrayNum)}`); --> use if want to use return result above
-// console.log(anotherMax(arrayNum)); // outputs object in console
+/**
+ * sumOfArray function --> product goooooood
+ *
+ * @param {number} arr - given array
+ *
+ * @returns {number} - the sum of array by mutating the result variable - adding the current result value + values in the array
+ */
+const sumOfArray = (arr) => {
+  let result = 0;
+  for (const num of arr) {
+    console.log(num);
+    result = result + num;
+  }
+  return { result }; // returns object
+  // can also do return result --> to return as a number
+};
+console.log(sumOfArray(arrayNum));
 
 
 
+// ======= Max Function ======= //
+/**
+ * @function max(array)
+ *
+ * @param {number} array - given array
+ *
+ * @returns {number} - the max number in an array
+ */
+const max = (array) => {
+  let result = 0;
+  for (let i = 0; i < array.length; i++) {
+    let currentNum = array[i];
+    let nextNum = array[i + 1];
+    if (currentNum < nextNum) {
+      result = nextNum;
+    }
+    if (currentNum > nextNum) {
+      result = currentNum;
+    }
+  }
+  return `The max number in the array is: ${result}`;
+};
+console.log(max(arrayNum));
 
-// /**
-//  * @function letterFrequency(phrase)
-//  *
-//  * @param {string} phrase - any phrase or even sentence
-//  *
-//  * @returns {object} - counts how many certain specific letters are in a phrase string
-//  *
-//  * @example {
-//  * h: 1,
-//  * o: 14,
-//  * e: 7,
-//  * t: 2,
-//  * w: 3
-//  * }
-//  */
-// const letterFrequency = (phrase) => {
-//   let frequency = {};
-//   for (const letter of phrase) {
-//     // check if letter exists
-//     if (letter in frequency) {
-//       // if yes then increment++
-//       frequency[letter] += 1;
-//     } else {
-//       // otherwise set value to 1
-//       frequency[letter] = 1;
-//     }
-//   }
+// another way of doing the max function
+const anotherMax = (numbers) => {
+  let result = numbers[0];
+  for (const number of numbers) {
+    if (number > result) {
+      result = number;
+    }
+  }
 
-//   return frequency;
-// };
-// console.log(letterFrequency("Wow Ej Sadiarin you so good handsome everything code goooooood"));
+  // return result; --> can be used if want to return pure number
+  return { result };
+};
+// console.log(`anotherMax function result: ${anotherMax(arrayNum)}`); --> use if want to use return result above
+console.log(anotherMax(arrayNum)); // outputs object in console
 
 
 
 
-// // REAL WORLD EXAMPLE: GOOGLE SEARCH ENGINE
-// // --> detecting the frequency of searched words (popular)
-// /**
-//  * @function wordFrequency(phrase)
-//  *
-//  * @param {string} phrase - a phrase or sentence
-//  *
-//  * @method split() - seperates words, letters, etc. given an argument
-//  * @argument characters - in split() method
-//  *
-//  * @returns {object} - counts the certain specific words in a given phrase or sentence
-//  */
-// const examplePhrase = "hey hey wow good yes";
-// const wordFrequency = (phrase) => {
-//   let frequency = {};
-//   // use split() method to seperate words
-//   const splitPhrase = phrase.split(" ");
-//   for (const word of splitPhrase) {
-//     // check if word exist
-//     if (word in frequency) {
-//       frequency[word] += 1;
-//     } else {
-//       // if new word then set value to 1
-//       frequency[word] = 1;
-//     }
-//   }
-//   return frequency;
-// };
-// console.log(wordFrequency(examplePhrase));
+/**
+ * @function letterFrequency(phrase)
+ *
+ * @param {string} phrase - any phrase or even sentence
+ *
+ * @returns {object} - counts how many certain specific letters are in a phrase string
+ *
+ * @example {
+ * h: 1,
+ * o: 14,
+ * e: 7,
+ * t: 2,
+ * w: 3
+ * }
+ */
+const letterFrequency = (phrase) => {
+  let frequency = {};
+  for (const letter of phrase) {
+    // check if letter exists
+    if (letter in frequency) {
+      // if yes then increment++
+      frequency[letter] += 1;
+    } else {
+      // otherwise set value to 1
+      frequency[letter] = 1;
+    }
+  }
+
+  return frequency;
+};
+console.log(letterFrequency("Wow Ej Sadiarin you so good handsome everything code goooooood"));
 
 
-// /* ======= HIGHER ORDER FUNCTIONS ======= 
-//  --> functions that takes in another function as argument and/or returns a function
-// */
 
-// //  MAP, FILTER, REDUCE Array Methods  
-// const nums = [1, 2, 3, 4, 7, 9, 5, 8];
+
+// REAL WORLD EXAMPLE: GOOGLE SEARCH ENGINE
+// --> detecting the frequency of searched words (popular)
+/**
+ * @function wordFrequency(phrase)
+ *
+ * @param {string} phrase - a phrase or sentence
+ *
+ * @method split() - seperates words, letters, etc. given an argument
+ * @argument characters - in split() method
+ *
+ * @returns {object} - counts the certain specific words in a given phrase or sentence
+ */
+const examplePhrase = "hey hey wow good yes";
+const wordFrequency = (phrase) => {
+  let frequency = {};
+  // use split() method to seperate words
+  const splitPhrase = phrase.split(" ");
+  for (const word of splitPhrase) {
+    // check if word exist
+    if (word in frequency) {
+      frequency[word] += 1;
+    } else {
+      // if new word then set value to 1
+      frequency[word] = 1;
+    }
+  }
+  return frequency;
+};
+console.log(wordFrequency(examplePhrase));
+
+
+/* ======= HIGHER ORDER FUNCTIONS ======= 
+ --> functions that takes in another function as argument and/or returns a function
+*/
+
+//  MAP, FILTER, REDUCE Array Methods  
+const nums = [1, 2, 3, 4, 7, 9, 5, 8];
 
 /**
  * MAP  @method map()
@@ -364,6 +364,7 @@
  * 
  * @returns {array} - new array 
  */
+
 const mapFunc = (numArray) => {
   return numArray.map(number => number * 2);
 }
@@ -462,6 +463,7 @@ fetch('https://dog.ceo/api/breeds/image/random')
   })
 
   console.log('run 3rd');
+  console.log("hey");
 
 // Get a random number and set minimum value to 1 and max to 734
 const minMax = (number) => {
@@ -502,6 +504,7 @@ const randomNumber = () => {
 }
 
 console.log(randomNumber());
-
+console.log("new new\n");
+console.log("new new new\n");
 
 getHero(randomNumber());

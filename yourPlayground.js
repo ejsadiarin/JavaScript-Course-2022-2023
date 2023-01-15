@@ -432,13 +432,13 @@ const moneySum = (objectPerson) => {
 console.log(moneySum(exampleObj));
 
 // TODO: optimize above solution (use reduce())
-const reducef = nums.reduce(num => num.reduce())
-const moneySumReduce = (arr) => {
-  let result = 0;
-  for (const num in arr) {
+// const reducef = nums.reduce(num => num.reduce())
+// const moneySumReduce = (arr) => {
+//   let result = 0;
+//   for (const num in arr) {
     
-  }
-}
+//   }
+// }
 const func = () => {
   let result = 0;
   for (const num of nums) {
@@ -450,17 +450,17 @@ const func = () => {
 // /**
 //  * 
 //  */
-const dogImage = document.getElementById('dogImage');
-const dogButton = document.getElementById('dogButton');
+// const dogImage = document.getElementById('dogImage');
+// const dogButton = document.getElementById('dogButton');
 
-// example: 'run 2nd' will run last since it is async
-console.log('run 1st')
-fetch('https://dog.ceo/api/breeds/image/random')
-  .then(response => response.json)
-  .then(json => {
-    console.log(json.message)
-    dogImage.innerHTML = `<img src='${json.message}'/>`
-  })
+// // example: 'run 2nd' will run last since it is async
+// console.log('run 1st')
+// fetch('https://dog.ceo/api/breeds/image/random')
+//   .then(response => response.json)
+//   .then(json => {
+//     console.log(json.message)
+//     dogImage.innerHTML = `<img src='${json.message}'/>`
+//   })
 
   console.log('run 3rd');
   console.log("hey");
@@ -508,3 +508,4 @@ console.log("new new\n");
 console.log("new new new\n");
 
 getHero(randomNumber());
+console.log(typeof 123);

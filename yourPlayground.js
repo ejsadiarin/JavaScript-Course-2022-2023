@@ -114,20 +114,27 @@ console.log(person);
  * g(z) = 1 / (1 + e**-z)
  * g(z) should be in list form / object form {} that holds generic data types (just store results in another new array)
  */
-const e = [
-  1.718, 2.718, 3.718, 4.718, 5.718, 6.718, 7.718, 8.718, 9.718, 10.718,
-];
+const e = [1.718, 2.718, 3.718, 4.718, 5.718, 6.718, 7.718, 8.718, 9.718, 10.718];
 const z = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20];
 const result = (e, z) => {
   let resultsArr = [];
   for (let i = 0; i < e.length; i++) {
-    let formula = 1 / (1 + Math.pow(e[i], -z[i]));
+    let formula = 1 / (1 + Math.pow(e[i], -z[i])); // can do e[i] ** -z[i] for exponentiation
     resultsArr.push(formula);
   }
   console.log(resultsArr);
 };
 
 result(e, z);
+
+let g = [];
+// only using loops
+for (let i = 0; i < e.length; i++) {
+  let formula = 1 / (1 + Math.pow(e[i], -z[i]));
+  g.push(formula);
+}
+console.log(g)
+
 
 // ======= Create a function that uses ES6 arrow function with 2 arguments, object, and template literals ======= //
 // then store a function in the object, use 'this' keyword
